@@ -1,0 +1,293 @@
+ Percent |	Source code & Disassembly of sparse_matrix for L1-dcache-loads (111762 samples, percent: local period)
+----------------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000001450 <multiply_sparse_matrices>:
+         : 6    multiply_sparse_matrices():
+    0.00 :   1450:   endbr64
+    0.00 :   1454:   push   %r14
+    0.00 :   1456:   mov    %rdi,%r14
+    0.00 :   1459:   mov    %rdx,%rdi
+    0.00 :   145c:   push   %r13
+    0.00 :   145e:   imul   %rcx,%rdi
+    0.00 :   1462:   push   %r12
+    0.00 :   1464:   mov    %rcx,%r12
+    0.00 :   1467:   push   %rbp
+    0.00 :   1468:   mov    %rdx,%rbp
+    0.00 :   146b:   push   %rbx
+    0.00 :   146c:   mov    %rsi,%rbx
+    0.00 :   146f:   mov    $0x8,%esi
+    0.00 :   1474:   call   10f0 <calloc@plt>
+    0.00 :   1479:   mov    %rax,%r13
+    0.00 :   147c:   test   %rax,%rax
+    0.00 :   147f:   je     14f3 <multiply_sparse_matrices+0xa3>
+    0.00 :   1481:   test   %r12,%r12
+    0.00 :   1484:   je     14f3 <multiply_sparse_matrices+0xa3>
+    0.00 :   1486:   test   %rbp,%rbp
+    0.00 :   1489:   je     14f3 <multiply_sparse_matrices+0xa3>
+    0.00 :   148b:   lea    0x0(,%rbp,8),%rcx
+    0.00 :   1493:   mov    %rax,%r9
+    0.00 :   1496:   mov    %r14,%r10
+    0.00 :   1499:   xor    %r11d,%r11d
+    0.00 :   149c:   lea    (%r14,%rcx,1),%rsi
+    0.00 :   14a0:   mov    %rbx,%r8
+    0.00 :   14a3:   xor    %edi,%edi
+    0.00 :   14a5:   nopl   (%rax)
+    0.03 :   14a8:   vmovsd (%r9,%rdi,8),%xmm1
+    0.00 :   14ae:   mov    %r8,%rdx
+    0.00 :   14b1:   mov    %r10,%rax
+    0.00 :   14b4:   nopl   0x0(%rax)
+   45.66 :   14b8:   vmovsd (%rax),%xmm0
+   54.31 :   14bc:   vmulsd (%rdx),%xmm0,%xmm0
+    0.00 :   14c0:   add    $0x8,%rax
+    0.00 :   14c4:   add    %rcx,%rdx
+    0.00 :   14c7:   vaddsd %xmm0,%xmm1,%xmm1
+    0.00 :   14cb:   cmp    %rax,%rsi
+    0.00 :   14ce:   jne    14b8 <multiply_sparse_matrices+0x68>
+    0.00 :   14d0:   vmovsd %xmm1,(%r9,%rdi,8)
+    0.00 :   14d6:   inc    %rdi
+    0.00 :   14d9:   add    $0x8,%r8
+    0.00 :   14dd:   cmp    %rdi,%rbp
+    0.00 :   14e0:   jne    14a8 <multiply_sparse_matrices+0x58>
+    0.00 :   14e2:   inc    %r11
+    0.00 :   14e5:   add    %rcx,%r9
+    0.00 :   14e8:   add    %rcx,%r10
+    0.00 :   14eb:   add    %rcx,%rsi
+    0.00 :   14ee:   cmp    %r11,%r12
+    0.00 :   14f1:   jne    14a0 <multiply_sparse_matrices+0x50>
+    0.00 :   14f3:   pop    %rbx
+    0.00 :   14f4:   mov    %r13,%rax
+    0.00 :   14f7:   pop    %rbp
+    0.00 :   14f8:   pop    %r12
+    0.00 :   14fa:   pop    %r13
+    0.00 :   14fc:   pop    %r14
+    0.00 :   14fe:   ret
+ Percent |	Source code & Disassembly of sparse_matrix for L1-dcache-loads (14 samples, percent: local period)
+------------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    00000000000015f0 <multiply_vector_by_matrix>:
+         : 6    multiply_vector_by_matrix():
+    0.00 :   15f0:   endbr64
+    0.00 :   15f4:   push   %rbp
+    0.00 :   15f5:   mov    %rsp,%rbp
+    0.00 :   15f8:   push   %r15
+    0.00 :   15fa:   lea    0x0(,%rcx,8),%r15
+    0.00 :   1602:   push   %r14
+    0.00 :   1604:   mov    %rcx,%r14
+    0.00 :   1607:   push   %r13
+    0.00 :   1609:   mov    %rdx,%r13
+    0.00 :   160c:   push   %r12
+    0.00 :   160e:   mov    %rsi,%r12
+    0.00 :   1611:   mov    $0x1,%esi
+    0.00 :   1616:   push   %rbx
+    0.00 :   1617:   mov    %rdi,%rbx
+    0.00 :   161a:   mov    %r15,%rdi
+    0.00 :   161d:   and    $0xffffffffffffffe0,%rsp
+    0.00 :   1621:   call   10f0 <calloc@plt>
+    0.00 :   1626:   mov    %rax,%r11
+    0.00 :   1629:   test   %rax,%rax
+    0.00 :   162c:   je     1719 <multiply_vector_by_matrix+0x129>
+    0.00 :   1632:   test   %r14,%r14
+    0.00 :   1635:   je     1719 <multiply_vector_by_matrix+0x129>
+    0.00 :   163b:   mov    %r13,%rsi
+    0.00 :   163e:   mov    %r13,%r8
+    0.00 :   1641:   mov    %rax,%rdi
+    0.00 :   1644:   xor    %ecx,%ecx
+    0.00 :   1646:   shr    $0x2,%rsi
+    0.00 :   164a:   lea    (%r15,%rax,1),%r9
+    0.00 :   164e:   lea    -0x1(%r13),%r10
+    0.00 :   1652:   and    $0xfffffffffffffffc,%r8
+    0.00 :   1656:   shl    $0x5,%rsi
+    0.00 :   165a:   nopw   0x0(%rax,%rax,1)
+    0.00 :   1660:   test   %r13,%r13
+    0.00 :   1663:   je     1706 <multiply_vector_by_matrix+0x116>
+    0.00 :   1669:   cmp    $0x2,%r10
+    0.00 :   166d:   jbe    172b <multiply_vector_by_matrix+0x13b>
+    0.00 :   1673:   lea    (%r12,%rcx,8),%rdx
+    0.00 :   1677:   xor    %eax,%eax
+    0.00 :   1679:   vxorpd %xmm0,%xmm0,%xmm0
+    0.00 :   167d:   nopl   (%rax)
+  100.00 :   1680:   vmovupd (%rbx,%rax,1),%ymm4
+    0.00 :   1685:   vmulpd (%rdx,%rax,1),%ymm4,%ymm1
+    0.00 :   168a:   add    $0x20,%rax
+    0.00 :   168e:   vaddsd %xmm1,%xmm0,%xmm0
+    0.00 :   1692:   vunpckhpd %xmm1,%xmm1,%xmm2
+    0.00 :   1696:   vextractf128 $0x1,%ymm1,%xmm1
+    0.00 :   169c:   vaddsd %xmm2,%xmm0,%xmm0
+    0.00 :   16a0:   vaddsd %xmm1,%xmm0,%xmm0
+    0.00 :   16a4:   vunpckhpd %xmm1,%xmm1,%xmm1
+    0.00 :   16a8:   vaddsd %xmm1,%xmm0,%xmm0
+    0.00 :   16ac:   cmp    %rax,%rsi
+    0.00 :   16af:   jne    1680 <multiply_vector_by_matrix+0x90>
+    0.00 :   16b1:   mov    %r8,%rax
+    0.00 :   16b4:   cmp    %r8,%r13
+    0.00 :   16b7:   je     1702 <multiply_vector_by_matrix+0x112>
+    0.00 :   16b9:   mov    %r13,%rdx
+    0.00 :   16bc:   sub    %rax,%rdx
+    0.00 :   16bf:   cmp    $0x1,%rdx
+    0.00 :   16c3:   je     16ef <multiply_vector_by_matrix+0xff>
+    0.00 :   16c5:   lea    (%rax,%rcx,1),%r14
+    0.00 :   16c9:   vmovupd (%r12,%r14,8),%xmm5
+    0.00 :   16cf:   vmulpd (%rbx,%rax,8),%xmm5,%xmm1
+    0.00 :   16d4:   mov    %rdx,%r14
+    0.00 :   16d7:   and    $0xfffffffffffffffe,%r14
+    0.00 :   16db:   add    %r14,%rax
+    0.00 :   16de:   vaddsd %xmm1,%xmm0,%xmm0
+    0.00 :   16e2:   vunpckhpd %xmm1,%xmm1,%xmm1
+    0.00 :   16e6:   vaddsd %xmm1,%xmm0,%xmm0
+    0.00 :   16ea:   cmp    %r14,%rdx
+    0.00 :   16ed:   je     1702 <multiply_vector_by_matrix+0x112>
+    0.00 :   16ef:   lea    (%rax,%rcx,1),%rdx
+    0.00 :   16f3:   vmovsd (%r12,%rdx,8),%xmm1
+    0.00 :   16f9:   vmulsd (%rbx,%rax,8),%xmm1,%xmm1
+    0.00 :   16fe:   vaddsd %xmm1,%xmm0,%xmm0
+    0.00 :   1702:   vmovsd %xmm0,(%rdi)
+    0.00 :   1706:   add    $0x8,%rdi
+    0.00 :   170a:   add    %r13,%rcx
+    0.00 :   170d:   cmp    %rdi,%r9
+    0.00 :   1710:   jne    1660 <multiply_vector_by_matrix+0x70>
+    0.00 :   1716:   vzeroupper
+    0.00 :   1719:   lea    -0x28(%rbp),%rsp
+    0.00 :   171d:   mov    %r11,%rax
+    0.00 :   1720:   pop    %rbx
+    0.00 :   1721:   pop    %r12
+    0.00 :   1723:   pop    %r13
+    0.00 :   1725:   pop    %r14
+    0.00 :   1727:   pop    %r15
+    0.00 :   1729:   pop    %rbp
+    0.00 :   172a:   ret
+    0.00 :   172b:   vxorpd %xmm0,%xmm0,%xmm0
+    0.00 :   172f:   xor    %eax,%eax
+    0.00 :   1731:   jmp    16b9 <multiply_vector_by_matrix+0xc9>
+ Percent |	Source code & Disassembly of sparse_matrix for L1-dcache-loads (8 samples, percent: local period)
+-----------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3    Disassembly of section .text:
+         :
+         : 5    0000000000001500 <add_sparse_matrices>:
+         : 6    add_sparse_matrices():
+    0.00 :   1500:   endbr64
+    0.00 :   1504:   push   %rbp
+    0.00 :   1505:   imul   %rcx,%rdx
+    0.00 :   1509:   mov    %rsp,%rbp
+    0.00 :   150c:   push   %r13
+    0.00 :   150e:   mov    %rdx,%r13
+    0.00 :   1511:   push   %r12
+    0.00 :   1513:   mov    %rdi,%r12
+    0.00 :   1516:   lea    0x0(,%rdx,8),%rdi
+    0.00 :   151e:   push   %rbx
+    0.00 :   151f:   mov    %rsi,%rbx
+    0.00 :   1522:   and    $0xffffffffffffffe0,%rsp
+    0.00 :   1526:   call   1110 <malloc@plt>
+    0.00 :   152b:   test   %rax,%rax
+    0.00 :   152e:   je     15c1 <add_sparse_matrices+0xc1>
+    0.00 :   1534:   test   %r13,%r13
+    0.00 :   1537:   je     15c1 <add_sparse_matrices+0xc1>
+    0.00 :   153d:   lea    -0x1(%r13),%rdx
+    0.00 :   1541:   cmp    $0x2,%rdx
+    0.00 :   1545:   jbe    15de <add_sparse_matrices+0xde>
+    0.00 :   154b:   mov    %r13,%rdx
+    0.00 :   154e:   xor    %ecx,%ecx
+    0.00 :   1550:   shr    $0x2,%rdx
+    0.00 :   1554:   shl    $0x5,%rdx
+    0.00 :   1558:   nopl   0x0(%rax,%rax,1)
+   74.00 :   1560:   vmovupd (%r12,%rcx,1),%ymm1
+   26.00 :   1566:   vaddpd (%rbx,%rcx,1),%ymm1,%ymm0
+    0.00 :   156b:   vmovupd %ymm0,(%rax,%rcx,1)
+    0.00 :   1570:   add    $0x20,%rcx
+    0.00 :   1574:   cmp    %rdx,%rcx
+    0.00 :   1577:   jne    1560 <add_sparse_matrices+0x60>
+    0.00 :   1579:   mov    %r13,%rcx
+    0.00 :   157c:   and    $0xfffffffffffffffc,%rcx
+    0.00 :   1580:   test   $0x3,%r13b
+    0.00 :   1584:   je     15d0 <add_sparse_matrices+0xd0>
+    0.00 :   1586:   vzeroupper
+    0.00 :   1589:   sub    %rcx,%r13
+    0.00 :   158c:   cmp    $0x1,%r13
+    0.00 :   1590:   je     15b1 <add_sparse_matrices+0xb1>
+    0.00 :   1592:   vmovupd (%r12,%rcx,8),%xmm2
+    0.00 :   1598:   vaddpd (%rbx,%rcx,8),%xmm2,%xmm0
+    0.00 :   159d:   mov    %r13,%rdx
+    0.00 :   15a0:   and    $0xfffffffffffffffe,%rdx
+    0.00 :   15a4:   vmovupd %xmm0,(%rax,%rcx,8)
+    0.00 :   15a9:   add    %rdx,%rcx
+    0.00 :   15ac:   cmp    %rdx,%r13
+    0.00 :   15af:   je     15c1 <add_sparse_matrices+0xc1>
+    0.00 :   15b1:   vmovsd (%r12,%rcx,8),%xmm0
+    0.00 :   15b7:   vaddsd (%rbx,%rcx,8),%xmm0,%xmm0
+    0.00 :   15bc:   vmovsd %xmm0,(%rax,%rcx,8)
+    0.00 :   15c1:   lea    -0x18(%rbp),%rsp
+    0.00 :   15c5:   pop    %rbx
+    0.00 :   15c6:   pop    %r12
+    0.00 :   15c8:   pop    %r13
+    0.00 :   15ca:   pop    %rbp
+    0.00 :   15cb:   ret
+    0.00 :   15cc:   nopl   0x0(%rax)
+    0.00 :   15d0:   vzeroupper
+    0.00 :   15d3:   lea    -0x18(%rbp),%rsp
+    0.00 :   15d7:   pop    %rbx
+    0.00 :   15d8:   pop    %r12
+    0.00 :   15da:   pop    %r13
+    0.00 :   15dc:   pop    %rbp
+    0.00 :   15dd:   ret
+    0.00 :   15de:   xor    %ecx,%ecx
+    0.00 :   15e0:   jmp    1589 <add_sparse_matrices+0x89>
+ Percent |	Source code & Disassembly of libc.so.6 for L1-dcache-loads (1 samples, percent: local period)
+-------------------------------------------------------------------------------------------------------------
+         :
+         :
+         :
+         : 3     Disassembly of section .text:
+         :
+         : 5     0000000000046230 <random>:
+         : 6     __random():
+         : 7     ./stdlib/random.c:288
+    0.00 :   46230:  endbr64
+    0.00 :   46234:  sub    $0x18,%rsp
+         : 10    ./stdlib/random.c:291
+    0.00 :   46238:  mov    $0x1,%edx
+         : 12    ./stdlib/random.c:288
+    0.00 :   4623d:  mov    %fs:0x28,%rax
+    0.00 :   46246:  mov    %rax,0x8(%rsp)
+    0.00 :   4624b:  xor    %eax,%eax
+         : 16    ./stdlib/random.c:291
+    0.00 :   4624d:  lock cmpxchg %edx,0x1d64f3(%rip)        # 21c748 <lock>
+    0.00 :   46255:  jne    46290 <random+0x60>
+         : 19    ./stdlib/random.c:293 (discriminator 6)
+    0.00 :   46257:  lea    0x4(%rsp),%rsi
+    0.00 :   4625c:  lea    0x1d45fd(%rip),%rdi        # 21a860 <unsafe_state>
+    0.00 :   46263:  call   466c0 <random_r>
+         : 23    ./stdlib/random.c:295 (discriminator 6)
+    0.00 :   46268:  xor    %eax,%eax
+  100.00 :   4626a:  xchg   %eax,0x1d64d8(%rip)        # 21c748 <lock>
+    0.00 :   46270:  cmp    $0x1,%eax
+    0.00 :   46273:  jg     462a0 <random+0x70>
+         : 28    ./stdlib/random.c:297
+    0.00 :   46275:  movslq 0x4(%rsp),%rax
+         : 30    ./stdlib/random.c:298
+    0.00 :   4627a:  mov    0x8(%rsp),%rdx
+    0.00 :   4627f:  sub    %fs:0x28,%rdx
+    0.00 :   46288:  jne    462ae <random+0x7e>
+    0.00 :   4628a:  add    $0x18,%rsp
+    0.00 :   4628e:  ret
+    0.00 :   4628f:  nop
+         : 37    ./stdlib/random.c:291 (discriminator 3)
+    0.00 :   46290:  lea    0x1d64b1(%rip),%rdi        # 21c748 <lock>
+    0.00 :   46297:  call   91230 <__lll_lock_wait_private>
+    0.00 :   4629c:  jmp    46257 <random+0x27>
+    0.00 :   4629e:  xchg   %ax,%ax
+         : 42    ./stdlib/random.c:295 (discriminator 15)
+    0.00 :   462a0:  lea    0x1d64a1(%rip),%rdi        # 21c748 <lock>
+    0.00 :   462a7:  call   91300 <__lll_lock_wake_private>
+    0.00 :   462ac:  jmp    46275 <random+0x45>
+         : 46    ./stdlib/random.c:298
+    0.00 :   462ae:  call   136550 <__stack_chk_fail>

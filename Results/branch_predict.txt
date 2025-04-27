@@ -1,0 +1,16 @@
+Sparse matrix size: 2048 x 2048 with 5000 non-zero elements
+Addition time:    21.15 ms
+Multiplication time: 27384.93 ms
+Vector-Matrix Multiplication time:     3.58 ms
+
+ Performance counter stats for './sparse_matrix 2048 2048 5000 2048':
+
+     8,631,111,002      branch-instructions                                                   
+         4,470,941      branch-misses                    #    0.05% of all branches           
+
+      27.449008778 seconds time elapsed
+
+      27.367873000 seconds user
+       0.059999000 seconds sys
+
+

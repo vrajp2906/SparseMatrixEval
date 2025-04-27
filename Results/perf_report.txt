@@ -1,0 +1,18 @@
+# started on Mon Jul 29 12:44:51 2024
+
+
+ Performance counter stats for './sparse_matrix 2048 2048 5000 2048':
+
+   133,283,751,595      cycles                                                                
+    60,390,067,757      instructions                     #    0.45  insn per cycle            
+     8,630,943,240      branches                                                              
+         4,458,845      branch-misses                    #    0.05% of all branches           
+    17,238,168,533      L1-dcache-loads                                                       
+     8,974,599,812      L1-dcache-load-misses            #   52.06% of all L1-dcache accesses 
+
+      27.500547499 seconds time elapsed
+
+      27.450662000 seconds user
+       0.047997000 seconds sys
+
+
